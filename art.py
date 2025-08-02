@@ -14,35 +14,4 @@ logo = r"""
 | |___|___|___| |___| |  '----------------'  '----------------'  '----------------'  '----------------' 
 |_____________________|
 """
-def add(n1, n2):
-    return n1 + n2
-def multiply(n1, n2):
-    return n1 * n2
-def subtract(n1, n2):
-    return n1 - n2
-def divide(n1, n2):
-    return n1 / n2
-print(logo)
-dictionary = {"+" : add ,  "*" : multiply ,  "-" : subtract ,  "/" : divide}
-num = float(input("What's the first number?: "))
-def ask(num):
-    print(f"+\n-\n*\n/")
-    operation = input("Pick an operation: ")
-    if operation not in dictionary:
-        print("Invalid operation, Try again")
-        ask(num)
-    next_num = float(input("What's the next number?: "))
-    result = dictionary.get(operation)(num, next_num)
-    print(f"{round(num,2)} {operation} {next_num} = {round(result, 2)}")
-    again = input(
-        f"Type 'y' to continue calculating with {round(result, 2)}, or type 'n' to start a new calculation: ").lower()
-    if again == "y":
-        ask(result)
-    else:
-        print(logo)
-        print("\n"*10)
-        num = float(input("What's the first number?: "))
-        ask(num)
-
-ask(num)
-
+# Calculator Logo
